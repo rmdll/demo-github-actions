@@ -13,8 +13,8 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 env: 
-  MESSAGE_PULL_REQUEST: "C'est une Pull Request"
-  MESSAGE_PUSH: "C'est un Push"
+  MESSAGE_PULL_REQUEST: "On a une Pull Request"
+  MESSAGE_PUSH: "On a un Push"
 
 jobs:
   message_pull_request:
