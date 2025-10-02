@@ -13,19 +13,19 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 env: 
-  MESSAGE_PULL_REQUEST: "C'est une Pull Request !"
-  MESSAGE_PUSH: "C'est un Push !"
+  MESSAGE_PULL_REQUEST: "C'est une Pull Request"
+  MESSAGE_PUSH: "C'est un Push"
 
 jobs:
   message_pull_request:
-    if: ${{ github.GITHUB_EVENT_NAME }} == "pull_request"
+    if: ${{ github.event_name }} == "pull_request"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Run a message for pull request
         run: echo ${{ env.MESSAGE_PULL_REQUEST }}
   message_push:
-    if: ${{ github.GITHUB_EVENT_NAME }} == "push"
+    if: ${{ github.event_name }} == "push"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
