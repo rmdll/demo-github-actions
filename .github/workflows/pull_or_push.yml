@@ -18,14 +18,14 @@ env:
 
 jobs:
   message_pull_request:
-    if: ${{ github.event_name == "pull_request" }}
+    if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Run a message for pull request
         run: echo ${{ env.MESSAGE_PULL_REQUEST }}
   message_push:
-    if: ${{ github.event_name == "push" }}
+    if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
