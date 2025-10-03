@@ -1,0 +1,14 @@
+name: Next Workflow
+on:
+  workflow_run:
+    workflows: [ "Hello World" ]
+    types: [completed]
+
+jobs:
+  completed_hello_world_workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Display a message from next workflow
+        run: echo "Le workflow a été lancé !"
+
