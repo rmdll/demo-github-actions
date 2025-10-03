@@ -1,0 +1,18 @@
+name: Linked Workflow
+
+on:
+  workflow_dispatch:
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: First job message
+        run: echo "Le premier job est lancé !"
+  second:
+    runs-on: ubuntu-latest
+    needs: [first]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Second job message
+        run: echo "Le second job est lancé !"
