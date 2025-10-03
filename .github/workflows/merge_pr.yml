@@ -1,0 +1,12 @@
+name: Merge PR
+on:
+  pull_request:
+    types: [ closed ]
+    branches: [ "main" ]
+jobs:
+  display_message:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo Une PR a été fermée sur la branche main !
