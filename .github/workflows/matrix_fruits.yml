@@ -1,0 +1,16 @@
+name: Matrix of fruits
+on:
+  workflow_dispatch:
+jobs:
+  fruits:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 3
+      fail-fast: true
+      matrix:
+        fruits: ["banane", "fraise", "framboise", "pastèque"]
+        names: ["Marco", "Hernando", "Pablo"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tell what fruits ${{ matrix.names }} is eating
+        run: echo ${{ matrix.names }} mange une ${{ matrix.fruits }} 
